@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #7159c1;
+  color: white;
+}
+
+header h1 {
+  margin: 0 25px;
+}
+
+header a {
+  color: white;
+  margin: 0 25px;
+}
+
+header input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+main > * {
+  padding: 20px;
+}
+
+main aside.menu {
+  flex: 1;
+  background: #fafafa;
+}
+
+main aside.menu ul {
+  list-style: none;
+}
+
+main section.content {
+  flex: 2;
+}
+
+.books {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.book-card {
+  width: 200px;
+  border: 1px solid gray;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card img {
+  width: 100%;
+  height: 180px;
+  padding: 0 20px;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.book-card .info {
+  margin-bottom: 10px;
+}
+
+.book-card .book-title {
+  font-weight: bold;
+}
+
+.book-card .actions {
+  text-align: right;
+}
+
+.book-card .actions > * {
+  margin-bottom: 5px;
+}
