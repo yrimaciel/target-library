@@ -13,11 +13,14 @@ export default class Search {
 
   render() {
     return html`
-      <input
-        type="search"
-        placeholder="Nome do livro"
-        onkeyup="${this.doSearch}"
-      />
+      <div class="search">
+        <input
+          type="search"
+          placeholder="O que você procura?"
+          onkeyup="${this.doSearch}"
+        />
+        <span><i class="fas fa-search"></i></span>
+      </div>
     `;
   }
 }

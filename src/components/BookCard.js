@@ -5,7 +5,6 @@ import ButtonShowDetails from "../components/ButtonDetails";
 
 export default class BookCard {
   constructor(book) {
-    console.log(book);
     this.book = book;
     this.title = book.volumeInfo.title;
     this.imgUrl = book.volumeInfo.imageLinks
@@ -13,7 +12,7 @@ export default class BookCard {
       : "";
     this.price = book.saleInfo.retailPrice
       ? book.saleInfo.retailPrice.amount
-      : 0;
+      : "19,90";
   }
 
   render() {
@@ -27,7 +26,7 @@ export default class BookCard {
 
         <div class="info">
           <p className="book-title">${this.title}</p>
-          <p className="book-price">${this.price}</p>
+          <p className="book-price">R$ ${this.price}</p>
         </div>
 
         <div className="actions">
