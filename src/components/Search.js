@@ -3,11 +3,11 @@ import GoogleBooks from "../services/googleBooks";
 
 export default class Search {
   async doSearch(event) {
-    const api = new GoogleBooks();
-
     if (event.keyCode === 13) {
-      const results = await api.searchBooks(event.target.value);
-      console.log(results);
+      const value = event.target.value;
+
+      const valueReplaced = value.split(" ").join("+");
+      global.router.navigateTo(`search/${valueReplaced}`);
     }
   }
 

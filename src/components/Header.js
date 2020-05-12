@@ -6,11 +6,15 @@ export default class Header {
     const searchInput = new Search();
     return html`
       <header>
-        <h1><i class="fas fa-book"></i> TargetLib</h1>
+        <h1>
+          <a href="#"><i class="fas fa-book"></i> TargetLib</a>
+        </h1>
 
         ${searchInput.render()}
 
-        <a href="#" title="Ver meus favoritos"><i class="fas fa-heart"></i></a>
+        <a href="#/favorites" title="Ver meus favoritos"
+          ><i class="fas fa-heart"></i
+        ></a>
       </header>
     `;
   }

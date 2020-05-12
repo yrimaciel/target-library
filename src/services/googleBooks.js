@@ -2,9 +2,9 @@ import Axios from "axios";
 
 export default class GoogleBooks {
   getBooks() {
-    return Axios.get(`https://www.googleapis.com/books/v1/volumes?q=0`).then(
-      (res) => res.data
-    );
+    return Axios.get(
+      `https://www.googleapis.com/books/v1/volumes?q=javascript`
+    ).then((res) => res.data);
   }
 
   getCategories() {
@@ -25,5 +25,11 @@ export default class GoogleBooks {
     return Axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=${query}`
     ).then((res) => res.data);
+  }
+
+  getBookID(id) {
+    return Axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`).then(
+      (res) => res.data
+    );
   }
 }

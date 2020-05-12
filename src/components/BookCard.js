@@ -11,8 +11,14 @@ export default class BookCard {
       ? book.volumeInfo.imageLinks.thumbnail
       : "";
     this.price = book.saleInfo.retailPrice
-      ? book.saleInfo.retailPrice.amount
+      ? this.formatPrice(book.saleInfo.retailPrice.amount)
       : "19,90";
+    this.bookId = book.id;
+  }
+
+  formatPrice(price) {
+    const fPrice = price.toString().replace(".", ",");
+    return fPrice;
   }
 
   render() {
