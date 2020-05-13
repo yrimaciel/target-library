@@ -13,7 +13,6 @@ export default class BookCard {
     this.price = book.saleInfo.retailPrice
       ? this.formatPrice(book.saleInfo.retailPrice.amount)
       : "19,90";
-    this.bookId = book.id;
   }
 
   formatPrice(price) {
@@ -22,9 +21,9 @@ export default class BookCard {
   }
 
   render() {
-    const addCartButton = new ButtonAddCart();
-    const addFav = new ButtonAddFav();
-    const showDetails = new ButtonShowDetails();
+    const addCartButton = new ButtonAddCart(this.book);
+    const addFav = new ButtonAddFav(this.book);
+    const showDetails = new ButtonShowDetails(this.book.id);
 
     return html`
       <article class="book-card">

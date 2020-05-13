@@ -6,6 +6,7 @@ import Menu from "./components/Menu";
 import Header from "./components/Header";
 import Details from "./pages/Details";
 import Favorites from "./pages/Favorites";
+import Checkout from "./pages/Checkout";
 
 const router = new Router({
   mode: "hash",
@@ -18,6 +19,12 @@ router.add(/search\/([(\w+)]+)/i, renderSearch);
 router.add("details/{bookID}", renderDetails);
 
 router.add("favorites", renderFavorites);
+
+router.add("cart", renderCheckout);
+
+if (window.location.href.match(/#$/g)) {
+  window.location.href = window.location.href.replace("#", "");
+}
 
 router.addUriListener();
 
@@ -57,11 +64,16 @@ async function renderSearch(query) {
 }
 
 async function renderDetails(bookId) {
-  const details = new Details(bookId);
-  renderMain(await details.render());
+  const details = new Details();
+  renderMain(await details.render(bookId));
 }
 
 async function renderFavorites() {
   const favorites = new Favorites();
   renderMain(await favorites.render());
+}
+
+async function renderCheckout() {
+  const checkout = new Checkout();
+  renderMain(await checkout.render());
 }

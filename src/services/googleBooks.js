@@ -3,7 +3,7 @@ import Axios from "axios";
 export default class GoogleBooks {
   getBooks() {
     return Axios.get(
-      `https://www.googleapis.com/books/v1/volumes?q=javascript`
+      `https://www.googleapis.com/books/v1/volumes?q=javascript&maxResults=12`
     ).then((res) => res.data);
   }
 

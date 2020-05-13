@@ -15,7 +15,7 @@ export default class SearchResult {
         <h1>Resultado da pesquisa: ${result}</h1>
         ${results.items.map((book) => {
           const bookResults = new BookResults();
-          return bookResults.render(book);
+          return bookResults.render(book, true, true, true, null);
         })}
       </section>
     `;

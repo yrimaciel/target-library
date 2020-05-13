@@ -15,6 +15,10 @@ export default class Header {
         <a href="#/favorites" title="Ver meus favoritos"
           ><i class="fas fa-heart"></i
         ></a>
+
+        <a href="#/cart" title="Meu carrinho"
+          ><i class="fas fa-shopping-cart"></i
+        ></a>
       </header>
     `;
   }

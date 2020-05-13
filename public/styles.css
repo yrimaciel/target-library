@@ -40,7 +40,7 @@ header .search {
 }
 
 header .search input {
-  width: 600px;
+  width: 800px;
   padding: 15px;
   font-size: 20px;
   border-radius: 5px;
@@ -69,6 +69,7 @@ main aside.menu {
   background: #eee;
   border-bottom-right-radius: 15%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.253);
+  min-height: 90vh;
 }
 
 main aside.menu h1 {
@@ -236,4 +237,50 @@ section.cards-list h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-details .image {
+  margin: 20px;
+  margin-top: 0;
+}
+
+.book-details .image p.price {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.book-details .image img {
+  border: 2px solid rgba(128, 128, 128, 0.294);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.book-details .image .actions {
+  display: flex;
+  justify-content: center;
+}
+
+.book-details .book-content .info h1 {
+  margin: 0 10px;
+  font-size: 36px;
+}
+
+.book-details .book-content .info p {
+  text-justify: justify;
+  margin: 10px 65px 0 0;
+  font-size: 18px;
+}
+
+.book-details .book-content .extra {
+  margin-top: 15px;
+  font-size: 26px;
 }

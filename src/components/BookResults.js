@@ -2,12 +2,20 @@ import { html } from "htm/preact";
 import ButtonAddCart from "./ButtonAddCart";
 import ButtonDetails from "./ButtonDetails";
 import ButtonAddFav from "./ButtonAddFav";
+import ButtonRemove from "./ButtonRemove";
 
 export default class BookResults {
-  render(book) {
-    const buttonCart = new ButtonAddCart();
-    const buttonDetails = new ButtonDetails();
-    const buttonFav = new ButtonAddFav();
+  render(
+    book,
+    showCartButton = true,
+    showFavButton = true,
+    showDescription = true,
+    removeType = ""
+  ) {
+    const buttonCart = new ButtonAddCart(book);
+    const buttonDetails = new ButtonDetails(book.id);
+    const buttonFav = new ButtonAddFav(book);
+    const buttonRemove = new ButtonRemove(book, removeType);
 
     return html`
       <article className="book-results">
@@ -20,8 +28,11 @@ export default class BookResults {
         </div>
 
         <div class="info">
-          <p class="book-title">${book.volumeInfo.title}</p>
-          <p>${book.volumeInfo.description}</p>
+          <p class="book-title">
+            ${book.volumeInfo ? book.volumeInfo.title : null}
+          </p>
+          ${showDescription &&
+          html`<p>${book.volumeInfo ? book.volumeInfo.subtitle : null}</p>`}
           <p class="price">
             R$
             ${book.saleInfo.retailPrice
@@ -31,7 +42,9 @@ export default class BookResults {
         </div>
 
         <div class="actions">
-          ${buttonCart.render()} ${buttonDetails.render()} ${buttonFav.render()}
+          ${showCartButton && buttonCart.render(book)} ${buttonDetails.render()}
+          ${showFavButton && buttonFav.render(book)}
+          ${removeType !== null && buttonRemove.render()}
         </div>
       </article>
     `;
